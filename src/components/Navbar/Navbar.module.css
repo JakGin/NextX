@@ -10,11 +10,31 @@
   margin-bottom: 0.8em;
 }
 
+.activeLogo {
+  background: linear-gradient(
+    100deg,
+    rgba(83, 194, 139, 1) 0%,
+    rgba(214, 246, 212, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 0.7em;
+}
+
+.link {
+  font-weight: bold;
+  padding: 0.3em;
+}
+
+.activeLink {
+  color: #53c28b;
+  border-bottom: 2px solid #53c28b;
 }
 
 @media (min-width: 850px) {

@@ -1,6 +1,9 @@
-import React from 'react'
-import styles from "./Navbar.module.css"
-import Link from 'next/link'
+"use client";
+
+import React from "react";
+import styles from "./Navbar.module.css";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -28,25 +31,36 @@ const links = [
     url: "/portfolio",
     title: "Portfolio",
   },
-]
+];
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.container}>
-      <Link href="/" className={styles.logo}>
+      <Link
+        href="/"
+        className={`${styles.logo} ${pathname === "/" ? styles.activeLogo : ""}`}
+      >
         <h1>NextX</h1>
       </Link>
-      
+
       <section className={styles.links}>
-        {links.map(link => (
-          <Link key={link.id} className={styles.link} href={link.url}>
+        {links.map((link) => (
+          <Link
+            key={link.id}
+            className={`${styles.link} ${
+              pathname.includes(link.url) ? styles.activeLink : ""
+            }`}
+            href={link.url}
+          >
             {link.title}
           </Link>
         ))}
         {/* logout button */}
       </section>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
