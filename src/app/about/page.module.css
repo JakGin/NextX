@@ -1,0 +1,46 @@
+.imgContainer {
+  position: relative;
+  height: 300px;
+  margin-bottom: 2em;
+}
+
+.img {
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.imgText {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: #53c28b;
+  padding: 0.5em;
+  margin: 0.5em;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.item {
+  flex: 1;
+}
+
+.title {
+  margin-bottom: 0.5em;
+}
+
+.desc {
+  line-height: 1.4;
+  font-weight: 300;
+  text-align: justify;
+}
+
+@media (min-width: 850px) {
+  .content {
+    flex-direction: row;
+  }
+}
