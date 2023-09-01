@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 const links = [
   {
     id: 1,
-    url: "/about",
-    title: "About",
+    url: "/portfolio",
+    title: "Portfolio",
   },
   {
     id: 2,
@@ -18,18 +18,18 @@ const links = [
   },
   {
     id: 3,
-    url: "/dashboard",
-    title: "Dashboard",
+    url: "/about",
+    title: "About",
   },
   {
     id: 4,
-    url: "/portfolio",
-    title: "Portfolio",
+    url: "/contact",
+    title: "Contact",
   },
   {
     id: 5,
-    url: "/contact",
-    title: "Contact",
+    url: "/dashboard",
+    title: "Dashboard",
   },
 ];
 
