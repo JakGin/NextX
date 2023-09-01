@@ -11,13 +11,7 @@
 }
 
 .activeLogo {
-  background: linear-gradient(
-    100deg,
-    rgba(83, 194, 139, 1) 0%,
-    rgba(214, 246, 212, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #53c28b;
 }
 
 .links {
