@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const links = [
   {
@@ -48,6 +49,7 @@ const Navbar = () => {
       </Link>
 
       <section className={styles.links}>
+        <ThemeToggle />
         <Link
           href="/"
           className={`${styles.link} ${
