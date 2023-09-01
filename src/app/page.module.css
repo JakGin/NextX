@@ -7,8 +7,9 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3em;
   text-align: center;
+  margin-top: 2em;
 }
 
 .title {
