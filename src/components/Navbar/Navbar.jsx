@@ -7,19 +7,14 @@ import { usePathname } from "next/navigation";
 
 const links = [
   {
-    id: 0,
+    id: 1,
     url: "/about",
     title: "About",
   },
   {
-    id: 1,
+    id: 2,
     url: "/blog",
     title: "Blog",
-  },
-  {
-    id: 2,
-    url: "/contact",
-    title: "Contact",
   },
   {
     id: 3,
@@ -31,6 +26,11 @@ const links = [
     url: "/portfolio",
     title: "Portfolio",
   },
+  {
+    id: 5,
+    url: "/contact",
+    title: "Contact",
+  },
 ];
 
 const Navbar = () => {
@@ -40,12 +40,22 @@ const Navbar = () => {
     <nav className={styles.container}>
       <Link
         href="/"
-        className={`${styles.logo} ${pathname === "/" ? styles.activeLogo : ""}`}
+        className={`${styles.logo} ${
+          pathname === "/" ? styles.activeLogo : ""
+        }`}
       >
         <h1>NextX</h1>
       </Link>
 
       <section className={styles.links}>
+        <Link
+          href="/"
+          className={`${styles.link} ${
+            pathname === "/" ? styles.activeLink : ""
+          }`}
+        >
+          Home
+        </Link>
         {links.map((link) => (
           <Link
             key={link.id}
