@@ -14,7 +14,7 @@ const Contact = () => {
       <h1 className={styles.title}>Let's Keep in Touch</h1>
       <div className={styles.content}>
         <div className={styles.imgContainer}>
-          <Image src="/contact.png" alt="" fill className={styles.img} />
+          <Image src="/contact.png" alt="" fill className={styles.img} sizes="500px"/>
         </div>
         <form className={styles.form}>
           <input type="text" placeholder="name" className={styles.input} />
