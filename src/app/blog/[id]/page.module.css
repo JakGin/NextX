@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.desc {
+  font-size: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.logo img {
+  border-radius: 50%;
+}
+
+.content {
+  font-size: 1.2rem;
+}
+
+.rightPanel {
+  position: relative;
+  height: 300px;
+  width: 400px;
+}
+
+.rightPanel img {
+  object-fit: contain;
+}
+
+@media (min-width: 850px) {
+  .container {
+    flex-direction: row;
+    gap: 4em;
+  }
+
+  .leftPanel {
+    flex: 1;
+  }
+
+  .rightPanel {
+    flex: 1;
+    max-width: 600px;
+  }
+}
