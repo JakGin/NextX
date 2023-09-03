@@ -3,12 +3,16 @@ import styles from "./Button.module.css";
 import Link from "next/link";
 
 const Button = ({ url, children, ...rest }) => {
-  return (
+  return url ? (
     <Link href={url}>
       <button className={styles.button} {...rest}>
         {children}
       </button>
     </Link>
+  ) : (
+    <button className={styles.button} {...rest}>
+      {children}
+    </button>
   );
 };
 
