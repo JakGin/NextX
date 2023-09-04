@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/Button/Button";
 
 export const metadata = {
   title: "blog",
@@ -9,7 +10,9 @@ export const metadata = {
 };
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3001/api/posts", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -24,10 +27,10 @@ const Blog = async () => {
   return (
     <div className={styles.container}>
       {data.map((post) => (
-        <Link className={styles.item} href={`blog/${post.id}`} key={post.id}>
+        <div className={styles.item} key={post._id}>
           <div className={styles.imgContainer}>
             <Image
-              src="https://images.pexels.com/photos/8438944/pexels-photo-8438944.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src={post.img}
               alt=""
               fill
               sizes="400px"
@@ -36,9 +39,10 @@ const Blog = async () => {
           </div>
           <div className={styles.text}>
             <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <p>{post.desc}</p>
+            <Button style={{marginTop: "1.2em"}} url={`/blog/${post._id}`}>See more</Button>
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );

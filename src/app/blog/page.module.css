@@ -32,4 +32,12 @@
     flex-direction: row;
     gap: 3em;
   }
+
+  .text {
+    flex: 1;
+  }
+
+  .imgContainer {
+    flex: 1;
+  }
 }
