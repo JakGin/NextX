@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
 import Button from "@/components/Button/Button";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 export const metadata = {
   title: "dashboard",

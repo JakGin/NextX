@@ -5,6 +5,8 @@ import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const links = [
   {
@@ -36,6 +38,7 @@ const links = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const session = useSession();
 
   return (
     <nav className={styles.container}>
@@ -69,7 +72,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {/* logout button */}
+        {session.status === "authenticated" && (
+          <button className={styles.logout} onClick={() => signOut()}>
+            Logout
+          </button>
+        )}
       </section>
     </nav>
   );

@@ -25,6 +25,45 @@
   font-weight: bold;
 }
 
+.providers {
+  display: flex;
+  gap: 0.8em;
+}
+
+.providers button {
+  padding: 1em;
+  color: inherit;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.github {
+  background-color: #333;
+  color: #eee !important;
+}
+
+.google {
+  background-color: #4285f4;
+  color: #eee !important;
+}
+
+.rectangle {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login {
   text-decoration: underline;
 }

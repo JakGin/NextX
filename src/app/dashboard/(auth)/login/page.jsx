@@ -4,7 +4,8 @@ import React from "react";
 import styles from "./page.module.css";
 import Button from "@/components/Button/Button";
 import Link from "next/link";
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 const Login = () => {
   return (
@@ -18,11 +19,27 @@ const Login = () => {
         />
         <Button url="">Login</Button>
       </form>
+      
+      --OR--
+
+      <div className={styles.providers}>
+        <button className={styles.google} onClick={() => signIn("google")}>
+        <div className={styles.rectangle}>
+            <Image src="/google-logo.png" alt="google" width={30} height={30}></Image>
+          </div>
+          Sign In with Google
+        </button>
+        <button className={styles.github} onClick={() => signIn("github")}>
+          <div className={styles.rectangle}>
+            <Image src="/github.svg" alt="github" width={30} height={30}></Image>
+          </div>
+          Sign In with Github
+        </button>
+      </div>
+
       <Link href="/dashboard/register" className={styles.login}>
         Don't have an accout - Register here
       </Link>
-      <button onClick={() => signIn("github")}>Sign In with Github</button>
-      <button onClick={() => signOut()}>Log Out</button>
     </div>
   );
 };
