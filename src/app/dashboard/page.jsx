@@ -14,7 +14,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Dashboard = () => {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:3001/api/posts",
+    "http://localhost:3000/api/posts",
     fetcher
   );
 
