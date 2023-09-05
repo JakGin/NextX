@@ -61,7 +61,7 @@ const Login = () => {
       </div>
 
       <Link href="/dashboard/register" className={styles.login}>
-        Don't have an accout - Register here
+        Do not have an accout - Register here
       </Link>
     </div>
   );
