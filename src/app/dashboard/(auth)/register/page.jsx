@@ -7,11 +7,6 @@ import Button from "@/components/Button/Button";
 import ErrorMessage from "@/components/Message/ErrorMessage";
 import { useRouter } from "next/navigation";
 
-export const metadata = {
-  title: "register",
-  description: "NextX register page",
-};
-
 const Register = () => {
   const [error, setError] = useState(false);
 
