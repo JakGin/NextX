@@ -3,18 +3,6 @@ import connect from "@/utils/db";
 import User from "@/models/User";
 import bcrypt from "bcrypt";
 
-// export async function GET(request) {
-//   try {
-//     await connect();
-//     const posts = await Post.find();
-//     return new NextResponse(JSON.stringify(posts), { status: 200 });
-//   } catch (error) {
-//     return new NextResponse("Connection to the database failed", {
-//       status: 500,
-//     });
-//   }
-// }
-
 export async function POST(request) {
   const { name, email, password } = await request.json();
   const hashedPassword = await bcrypt.hash(password, 5);
